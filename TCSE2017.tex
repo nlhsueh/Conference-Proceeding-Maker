@@ -1,0 +1,663 @@
+\documentclass[12pt,oneside,a4paper]{book}
+\usepackage[top=.5in, bottom=.5in,left=.55in, right=.55in]{geometry}
+
+%虛擬章節用的，沒有意義
+\newif\ifJustHint			\JustHintfalse
+
+\ifJustHint \chapter{Setting} \fi
+
+\input{prefix}
+
+\usepackage{array}% http://ctan.org/pkg/array
+\usepackage{titlesec}
+
+\newif\ifShowPaper	\ShowPapertrue
+\newif\ifAllPage 			\AllPagetrue
+\newif\ifOnePage 		\OnePagefalse
+\newif\ifShowNotify	\ShowNotifyfalse
+
+\input{paperList}
+
+\newenvironment{bottompar}{\par\vspace*{\fill}}{}
+\renewcommand\thesection{\thechapter\Alph{section}}
+\linespread{1} 
+\setlength{\parskip}{0.7em}     
+\setlength\parindent{0pt}
+\newcommand{\mIndent}{\hspace{.5cm}}
+\renewcommand{\chaptername}{Section}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}%
+\fancyhf{} % sets both header and footer to nothing
+\renewcommand{\headrulewidth}{0pt}
+\chead{}
+\rhead{\hyperref[toc]{TCSE 2017 論文集}}
+\lhead{}
+%\lhead{\fancyplain{}{\rightmark }}
+\lfoot{}
+\cfoot{\textit{第13屆台灣軟體工程研討會 2017, July 7-8, 逢甲大學}}
+\rfoot{\footnotesize{\thepage}}
+
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
+
+\begin{document}  
+
+\includepdf[fitpaper]{cover} %Cover page
+
+\chapter*{大會序言}
+
+「台灣軟體工程研討會」(Taiwan Conference on Software Engineering, TCSE) 是台灣提供給產官學專家與學者一個探討與發表軟體工程原理、實務與最新技術 研究的園地，多年來經諸位先進積極參與，TCSE 已成為國內首屈一指的軟體相關會議。逢甲大學資工系曾經於 2007 年承辦第三屆會議，很榮幸十年後再次承辦第十三屆的研討會。
+
+\mIndent 2017 年 TCSE 之大會主題為「\textit{Software Engineering and Data Science}」，探討軟體工程與資料科學的相關研究，包含應用軟體工程技術於資料科學及應用資料科學於軟體工程。本年度共有 83 篇投稿，最後收錄 75 篇論文，涵蓋 Software Engineering, Data Engineering, Software Testing, Web Engineering, Artificial Intelligence, Internet of Things, Software Application 等研究與實務議題。
+
+\mIndent 今年共有兩場大會主題演講。第一天特別邀請到美國 University of Texas at Dallas 的 Prof. Lawrence Chung 主講 Big Data Analytics: A Requirements Engineering Perspective，從需求工程的角度來看資料分析。第二天邀請中研院研究員，同時也是台灣資料科學協會理事長的陳昇偉博士主講「從大數據到人工智慧」，亦是非常精采的演講。此外，今年的專題論壇（Panel Discussion），主題為 Software Engineering and Data Science，由北科大鄭有進教授擔任論壇主持人， 與談人包含台大資工李允中教授、Prof. Lawrence Chung 與帆宣系統科技韋建名副總等來自學術界與產業界的頂尖專家，透過此場合提供一個產官學界的交流平台， 共同研討軟體工程與資料科學時代之整合與應用。此外大會亦舉辦三場業界的專題演講，從實務的角度提供不同的思考視野。
+
+
+\mIndent 去年的 TCSE 研討會在國立海洋大學舉辦，首次開設了 English session，鼓勵以英文撰寫並報告論文，獲得廣大迴響，優秀作品並推薦到 JIT (Journal of Internet Technology) 國際期刊刊登。今年 English paper 篇數成長至 12 篇，我們與 JISE (Journal of Information and Engineering ) 國際期刊合作，將優秀論文推薦到 JISE 的特刊。
+
+\mIndent 為了鼓勵將軟體工程結合資料分析並鼓勵動手做，我們特別與 OpenEdu 線上學習平台及 ITSA 社群運算與巨量資料跨校資源中心合辦資料分析的黑客松競賽（Hackathon）。這也是 TCSE 首次舉辦黑客松競賽。OpenEdu 是台灣主要 MOOC (Massive Open and Online Course) 平台之一，提供優質且免費的線上課程。學習者的學習行為被完整的記錄在系統中，透過分析這些學習行為可以改善日後的線上學習方式。今年共有 6 校 13 隊 45 位同學參與初賽，通過者將於大會開始之時進行複賽，也感謝多家廠商的贊助，讓活動得以順利舉辦。
+
+\mIndent 本次大會能順利舉辦，除了逢甲大學校方與台灣軟體工程學會的支持之外，同時也要感謝教育部資訊及科技教育司、科技部工程處工程科技推廣中心等單位的協助。對於議程主持人、議程委員、最佳論文評審所付出的精神與心力也要致上最大的感謝！此外也謝謝逢甲大學資訊工程系所有參與研討會籌備的教師以及工作人員，由於大家的群策群力才能逐步完成本次大會的規劃與目標，在此也一併致謝。最後，也敬祝 2017 年大會圓滿成功，希望與會嘉賓都能有一個愉快且有收穫的學術旅程！
+
+\vspace{1cm}
+
+大會主席：
+\begin{tabular}{l}
+許芳榮、楊東麟 
+\end{tabular}
+
+議程主席：
+\begin{tabular}{l}
+薛念林、陳錫民
+\end{tabular}
+
+2017 逢甲大學
+
+% 目錄
+\setcounter{tocdepth}{1} %1: section
+\tableofcontents\label{toc}
+\setcounter{chapter}{0}
+
+
+
+\chapter*{大會資訊}
+\addcontentsline{toc}{chapter}{\protect\numberline{} 大會資訊}%
+
+\textbf{主辦單位} 
+\begin{tabular}{l}
+逢甲大學
+\end{tabular}
+\\
+
+\textbf{大會日期}
+\begin{tabular}{l}
+2017 年 7 月 7 日(五)- 2017 年 7 月 8 日(六)
+\end{tabular}
+\\
+
+\textbf{大會地點}
+\begin{tabular}{l}
+台中 逢甲大學\\
+\end{tabular}
+\\
+
+\textbf{承辦單位}
+\begin{tabular}{l}
+逢甲大學 資訊工程系\\
+\end{tabular}
+\\
+
+\textbf{指導單位}
+\begin{tabular}{l}
+社團法人台灣軟體工程學會\\
+教育部資訊及科技教育司\\
+行政院科技部工程科技推展中心\\
+\end{tabular}
+\\
+
+\textbf{大會網站}
+\begin{tabular}{l}
+\href{http://tcse2017.iecs.fcu.edu.tw}{http://tcse2017.iecs.fcu.edu.tw}\\
+\end{tabular}
+\\
+
+\textbf{投稿系統}
+\begin{tabular}{l}
+\href{https://easychair.org/conferences/?conf=tcse2017}{https://easychair.org/conferences/?conf=tcse2017}\\
+\end{tabular}
+\\
+
+\textbf{社群網站}
+\begin{tabular}{l}
+\href{https://www.facebook.com/360848907645882/}{Facebook- 台灣軟體工程研討會} \\
+\end{tabular}
+\\
+
+\textbf{聯絡方式}
+\begin{tabular}{l}
+信箱：mailto:tcse2017.fcu@gmail.com\\
+電話：(04) 2451-7250 ext 3704\\
+\end{tabular}
+\\
+
+\textbf{論文集網址}
+\begin{tabular}{l}
+\href{https://goo.gl/mttPFD}{https://goo.gl/mttPFD} (2017/8/31 前有效) \\
+\end{tabular}
+\\
+
+\begin{figure}[h!]
+\includegraphics[]{images/qr_code.png}
+\end{figure}
+
+
+
+\chapter*{大會組織}
+\addcontentsline{toc}{chapter}{\protect\numberline{} 大會組織}%
+
+\textbf{大會榮譽主席}  \\ \\
+\begin{tabular}{ll}
+李秉乾  & 逢甲大學校長 \\
+竇其仁  & 逢甲大學資電學院院長
+\end{tabular}
+
+\textbf{大會主席} \\ \\
+\begin{tabular} {ll}
+許芳榮 &   逢甲大學資工系主任 \\
+楊東麟 &   逢甲大學資工系教授
+\end{tabular}
+
+\textbf{議程主席} \\ \\
+\begin{tabular} {ll}
+薛念林 & 逢甲大學資工系 \\
+陳錫民 & 逢甲大學資工系
+\end{tabular}
+
+\textbf{指導委員}\\ \\
+\begin{tabular}
+{p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}}
+主席：& 李允中 \\
+朱正忠 &朱治平 &余孝先 & 李漢銘 &    李健興 &   周忠信 &   林哲正 &   梁德容  \\  
+盛敏成 & 莊育秀 &郭耀煌 & 郭譽申 &   陳俊良  &  陳建村 &    陳英一 &   陳偉凱   \\
+黃世禎 &黃為德 &   葉道明  & 劉立頌  &   劉瑞隆  &  劉龍龍 &  鄭永斌 & 鄭有進  \\  
+鄭炳強
+\end{tabular}
+ 
+\textbf{特別議程主席} \\ \\
+\begin{tabular}{lll}
+ 軟體展示:  & 李信杰 &    成功大學 資工系 \\
+ 企業演講: & 許懷中 &   逢甲大學 資工系 \\
+ 黑客松:     & 黃奕欽 &   逢甲大學 資工系 \\
+ 區域安排: & 徐國勛  &  台中教育大學 資工系 \\
+ 英文論文: & 陳奕中, 英家慶 &   逢甲大學 資工系 \\
+\end{tabular}
+
+
+\textbf{議程委員} \\ \\
+\begin{tabular}{p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}p{1.8cm}}
+丁培毅  &  王凡  &  王建民 & 王秉豐 & 王能中 & 孔令傑&  孔崇旭 & 朱威達 \\
+李文廷 & 李俊宏 &李強&  李祈鈞 &   呂學展  &  沈文祥 &   江季翰 &   吳牧恩 \\
+吳秀陽 & 吳政瑋  &  吳漢銘 & 洪國鈞 & 林志敏    &林文揚 &林易泉 &林峰正 \\   
+林迺衛 &林楚迪  &范姜永益 &馬尚彬 &金台齡& 孫培真& 張文貴&  張志宏    \\
+張詠淳& 須上英& 梅興& 許乙清&    許子衡& 許見章 &   許煜亮& 連耀南 \\
+郭忠義& 郭家旭& 童曉儒& 陳立偉&    陳炳文&    陳恭& 陳振炎&  陳伶志 \\
+陳景祥& 陳宗禧& 黃冠寰& 黃建宏&    黃衍文&    黃福銘&  黃慶育&    黃惠俞\\    
+黃俊穎&  楊士萱& 楊中皇& 楊豐兆&   詹大千&    賈坤芳&  廖峻鋒& 廖珗洲 \\   
+熊博安& 劉豐豪& 劉建宏&  劉傳銘&    劉正山&    潘健一& 蔡敦仁& 鄭伯壎   \\ 
+賴聯福& 錢炳全& 鍾毓驥&  謝仕杰&    謝孟諺&     謝政勳&    藍啟維& 羅榮華 \\
+戴志華   
+\end{tabular} 
+
+\chapter*{大會議程} 
+
+
+\addcontentsline{toc}{chapter}{\protect\numberline{} 大會議程}%
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=.95\columnwidth]{program.png}
+\end{center}
+\end{figure}
+
+\chapter*{分場詳細議程}
+\addcontentsline{toc}{chapter}{\protect\numberline{} 分場詳細議程}%
+
+\subsection*{1A: \TitleOneA}
+\subsubsection*{\ChairOneA}
+\ListOneA
+
+\subsection*{1B: \TitleOneB}
+\subsubsection*{\ChairOneB}
+\ListOneB
+
+\subsection*{1C: \TitleOneC}
+\subsubsection*{\ChairOneC}
+\ListOneC
+
+\subsection*{1D: \TitleOneD}
+\subsubsection*{\ChairOneD}
+\ListOneD
+
+\subsection*{2A: \TitleTwoA}
+\subsubsection*{\ChairTwoA}
+\ListTwoA
+
+\subsection*{2B: \TitleTwoB}
+\subsubsection*{\ChairTwoB}
+\ListTwoB
+
+\subsection*{2C: \TitleTwoC}
+\subsubsection*{\ChairTwoC}
+\ListTwoC
+
+\subsection*{2D: \TitleTwoD}
+\subsubsection*{\ChairTwoD}
+\ListTwoD
+
+\subsection*{3A: \TitleThreeA}
+\subsubsection*{\ChairThreeA}
+\ListThreeA
+
+\subsection*{3B: \TitleThreeB}
+\subsubsection*{\ChairThreeB}
+\ListThreeB
+
+\subsection*{3C: \TitleThreeC}
+\subsubsection*{\ChairThreeC}
+\ListThreeC
+
+\subsection*{4A: \TitleFourA}
+\subsubsection*{\ChairFourA}
+\ListFourA
+
+\subsection*{4B: \TitleFourB}
+\subsubsection*{\ChairFourB}
+\ListFourB
+
+\subsection*{4C: \TitleFourC}
+\subsubsection*{\ChairFourC}
+\ListFourC
+
+\subsection*{4D: \TitleFourD}
+\subsubsection*{\ChairFourD}
+\ListFourD
+
+\chapter*{大會演講 I }
+\addcontentsline{toc}{chapter}{\protect\numberline{}大會演講 I}%
+
+\section*{Big Data Analytics: A Requirements Engineering Perspective}
+\subsubsection*{\TimeKeynoteOne, \LocationKeynoteOne}
+
+\subsection*{Prof. Lawrence Chung, Department of Computer Science University of Texas at Dallas, U.S.A.}
+
+\begin{wrapfigure}{l}{0.3\textwidth}
+%   \centering
+	\includegraphics[width=0.3\textwidth]{images/chung.png}    
+\end{wrapfigure}
+
+Big data promises to lead to better decisions, which can bring greater operational efficiency, productivity, reduced cost and risk, and the like to a variety of domains. But is the use of big data always going to be beneficial, and if so how? In answering this question, I will first give a light survey on the use of big data in practice, along with what big data might mean. Afterwards, I will describe a goal-oriented approach to beneficially using big data. This approach is intended to rationally ``connect the dots", from stakeholders’ problems and needs, business key performance indices, important insights through analytics for both AS-IS and TO-BE, machine learning techniques, SQL/NoSQL big queries, etc. I will talk about how this approach can aid business decision making in general and more specifically in business process reengineering, possibly with a tool support. At the end, I will outline challenges in more beneficially using big data.
+
+\paragraph{Lawrence Chung} has been working in Requirements Engineering, System/Software Architecture and Systems Engineering. He was the principal author of the research monograph “Non-Functional Requirements in Software Engineering", and has been involved in developing ``RE-Tools" (a muiti-notational requirements modeling tool kit) , ``HOPE" (a smartphone app project for people with difficulties), and ``Silverlining" (a Google-award winning project on cloud computing and big data).  He has been a keynote speaker, invited lecturer, co-editor-in-chief for Journal of Innovative Software, editorial board member for Requirements Engineering Journal and  International Journal of Networked and Distributed Computing, editor for ETRI Journal, and program co-chair for various international events.  He is currently on the faculty of Computer Science at University of Texas at Dallas.  He received his Ph.D. in Computer Science in 1993 from University of Toronto.
+
+\chapter*{大會演講 II}
+\addcontentsline{toc}{chapter}{\protect\numberline{}大會演講 II}%
+
+\section*{從大數據到人工智慧}
+\subsubsection*{\TimeKeynoteTwo, \LocationKeynoteTwo}
+
+
+\subsection*{陳昇瑋 博士，台灣資料科學協會理事長}
+
+\begin{wrapfigure}{l}{0.3\textwidth}
+	\includegraphics[width=0.3\textwidth]{images/chen.jpg}    
+\end{wrapfigure}
+
+大數據在台灣蔚為風潮，無論是政府官員或販夫走卒，人人皆聽聞大數據的威力。因此，產業界及各級政府皆努力建置所謂的大數據平台，以蒐羅及保存資料為己任，並導入資料的視覺分析工具，讓決策者們能夠快速地查看管理或施政成效，以客觀數據來輔助主觀評價，以分析輔助經驗，以事實取代臆測。
+
+\mIndent 這些都是好的進展。收集資料並整理成視覺化的分析圖表，對於評估及掌控現況有非常大的幫助，讓我們不再只能依直覺及經驗做決策。但，其實，這只是把資料平台準備好而已，要充份發揮資料的價值，還沒有沾到邊。要發揮資料價值，不能光談大數據，機器學習與人工智慧是絕對不該忽略的。事實上，這三者環環相扣：大數據是材料，機器學習是處理方法，人工智慧是成品所呈現的特質。這個時代，蒐集了大量資料，只呈現給人看，而不是拿來餵給電腦學習，讓你的應用呈現人工智慧，就跟採集了大量松露結果拿來沾醬油一整碗吃掉一樣可惜。如同精靈寶可夢需要有訓練師才能發揮能力，擁有大數據後，我們也需要很多很多的機器學習專家（有人稱呼為AI訓練師），才能讓我們手中的大數據真正發揮價值。
+
+\mIndent 在此演講中，我將為聽眾闡明資料科學、大數據、人工智慧、機器（深度）學習、資料探勘等相近但又不同的詞彙，再以各領域的實際案例來分享資料的可能應用及實用價值。同時，我將與聽眾分享其協助多家企業培訓資料科學家及導入資料科學團隊的各種經驗，從企業如何跳脫既有框架，讓資料科學團隊盡情揮灑無限創意著手，進而能活用資料、挖掘出潛藏在資料中不為人知的秘密，最終打造高信任度及高效率的工作環境，展現資料分析的價值。
+
+\paragraph{陳昇瑋博士} 現為台灣資料科學協會理事長、中央研究院資訊科學研究所研究員暨資料洞察實驗室主持人，研究領域為大數據分析、深度學習、計算社會科學及多媒體系統等，在使用者／社群意見及感受的淬取及量化方面持續有代表性的研究創見。陳博士堅信資料及資料分析的價值，長期推廣資料科學及其在各領域的應用，發起台灣資料科學協會及台灣資料科學年會，期能將對於資料科學的熱情傳達給大眾，一起來探索資料科學的潛力，並將資料科學引入每個人的專業領域之中。他期待讓資料分析在台灣不再是口號，而是大家真實拿來解決問題及創造價值的工具。更多資訊可參考其\href{http://www.iis.sinica.edu.tw/~swc/index_c.html}{個人網頁}。
+
+\chapter*{專題論壇}
+\addcontentsline{toc}{chapter}{\protect\numberline{}專題論壇}%
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=1\columnwidth]{images/panel.png}
+\end{center}
+\end{figure}
+
+\section*{Topic: Software Engineering and Data Science}
+
+\subsubsection*{\TimePanel, \LocationPanel}
+
+\subsubsection*{主席：鄭有進教授 / 國立臺北科技大學}
+
+\mIndent 鄭有進教授任職於台北科技大學資工系，教授物件導向程式設計、樣式導向設計、軟體架構、軟體需求與規格、人工智慧等課程。最近，他為大學生學習物件導向程式設計寫了中文部落格How To Solve It – OOP (http://htsioop.blogspot.tw/)與英文部落格How To Solve It – CPP (http://htsicpp.blogspot.tw/)。他於2009/12~2012/11三年間主持學界科專計畫，致力於推廣敏捷方法Scrum，協助多家台灣的資通訊廠商改善其軟體專案的開發效率與品質；該科專計畫並產出自由軟體ezScrum (http://sourceforge.net/projects/ezscrum/)供全球社群使用。鄭教授現曾任台灣軟體工程學會秘書長、理事長，他也是IEEE Computer Society的會員，並於2010年獲得Scrum Alliance的Certified ScrumMaster資格。鄭教授畢業於台北工專 (1985)，隨後獲得美國Johns Hopkins University碩士學位(1990)與University of Oklahoma博士學位(1993)。
+
+
+
+\subsubsection*{與談人：李允中教授 / 國立臺灣大學資訊工程系}
+\begin{tabular}{ll}
+學 歷: & Computer Science 博士，Texas A\&M University\\
+現 職: & 教授，國立台灣大學 資訊工程學系 \\
+經 歷: & 技術顧問，經濟部技術處 \\
+   & External Examiner UNITEN, Malaysia \\
+   & 理事長， 台灣軟體工程學會 副主席 國際模糊學會(IFSA) \\
+   & 召集人， 經濟部技術處 SBIR資通領域 \\
+   & 召集人， 教育部顧問室 軟體工程聯盟 \\
+   & 教授， 國立中央大學 資訊工程學系  \\
+   & 主任， 國立中央大學 電子計算機中心 \\ 
+   & 系主任， 國立   中央大學 資訊工程學系 \\
+獲 獎: & IBM 全球聯合大學研究(SUR)獎助 \\ 
+   & 傑出電機工程教授， 中國電機工程師學會 \\
+   & 特聘教授， 國立中央大學 
+\end{tabular}
+
+\subsubsection{與談人：Prof. Lawrence Chung / Department of Computer Science, University of Texas at Dallas}
+
+\mIndent Lawrence Chung has been working in Requirements Engineering, System/Software Architecture and Systems Engineering. He was the principal author of the research monograph ``Non-Functional Requirements in Software Engineering", and has been involved in developing ``RE-Tools" (a muiti-notational requirements modeling tool kit) , ``HOPE" (a smartphone app project for people with difficulties), and ``Silverlining" (a Google-award winning project on cloud computing and big data).  He has been a keynote speaker, invited lecturer, co-editor-in-chief for Journal of Innovative Software, editorial board member for Requirements Engineering Journal and  International Journal of Networked and Distributed Computing, editor for ETRI Journal, and program co-chair for various international events.  He is currently on the faculty of Computer Science at University of Texas at Dallas.  He received his Ph.D. in Computer Science in 1993 from University of Toronto.
+
+
+\subsubsection*{與談人：韋建名 博士 / 帆宣系統科技股份有限公司}
+
+\mIndent 韋博士在電腦，通信，網路及軟體產業界已有超過40年以上的經驗。過去曾服務於IBM、貝爾實驗室(Bell Laboratories)、Racal-Milgo、Fibronics/Spartacus、Axonet、瑞博强芯(天津)科技有限公司及目前的帆宣系統科技股份有限公司。他所負責的工作範圍涵蓋了策略規劃、系統架構設計、產品研發銷售、技術管理與行政管理等事務。他曾有五次創業及公司轉型的成功經驗，並成功地研發及推出超過20種以上的商業產品。
+
+\mIndent 韋博士從美國康州大學（University of Connecticut）工學院，電機及計算機科學系 (Electrical Engineering and Computer Science Department）獲得他的學士（1971）、碩士（1973）及哲學博士（1978）學位。他也是美國康州大學工學院1995年的 ``傑出工程師校友獎”的得獎人。
+
+\chapter*{企業演講}
+\addcontentsline{toc}{chapter}{\protect\numberline{}企業演講}%
+
+
+%\begin{figure}[h!]
+%\begin{center}
+%\includegraphics[width=.2\columnwidth]{images/yves.yves}
+%\end{center}
+%\end{figure}
+
+\section*{空手、緊握、到放手 – 敏捷路上學到的5件事} 
+\subsection*{林裕丞 總經理 / 新加坡鈦坦科技} 
+\subsubsection*{\TimeIndustryOne, \LocationIndustryOne}
+
+\begin{tabular}{l m{12cm}}
+	\begin{minipage}{4.5cm}
+		\includegraphics[width=4.2cm]{images/yves.jpg}   
+    \end{minipage}
+	&    
+	為什麼吃飽沒事做要跑敏捷？從一開始新加坡5人，到現在跨國150人，這過程中有喜悅、有掙扎、也有不少的學習和成長。這是一個鈦坦科技十年來的演化史，經由長時間跨度與宏觀組織角度，跟大家分享我們在組織文化和產品面上的改變和學習。在這次演講中您將會有以下收穫：
+\begin{enumerate}
+\item 什麼時候要跑敏捷？
+\item 如何評估敏捷的成效？
+\item 在組織管理上有那些工具和方法？
+\end{enumerate} 
+\end{tabular}
+
+\section*{協同式雲端作業系統 - 創造雲端社會的新生態} 
+\subsection*{林俊孝 Chief Technology Officer/ Picowork} 
+\subsubsection*{\TimeIndustryTwo, \LocationIndustryTwo}
+
+
+\begin{tabular}{l m{12cm}}
+	\begin{minipage}{4.5cm}
+		\includegraphics[width=4.2cm]{images/lin.jpeg}    
+    \end{minipage}
+	&    
+現今的生活大量的依賴第三方應用服務來進行，然而不同的應用服務和服務平台間存在著商業經營上、技術架構上、及功能發展上及壁壘（Boundry），帶來產業全方位協同的挑戰。「協同式雲端作業系統」以作業系統的角度出發，透過技術思維上的創新，將整個網際網路看成是全球最大的一部計算機，重新定義了網際網路的定位，使各行各業可以擁有自己的雲端作業系統環境，又可以透過自己的雲端環境，與任何人(同事、顧客、夥伴、朋友)自由地進行協同作業，也能以最低的成本，讓過去、現在、及未來的網路資訊系統和網路資源擴充到雲端環境中，最後亦能藉此產生自我的大數據，為創造雲端社會的新生態，帶來了新的可能。
+\end{tabular}
+
+\clearpage
+
+\section*{資料科學在物聯網之應用} 
+\subsection*{王燚 / MathWorks財務工程技術經理}
+\subsubsection*{\TimeIndustryThree, \LocationIndustryThree}
+
+\begin{tabular}{l m{12cm}}
+	\begin{minipage}{4.5cm}
+		\includegraphics[width=4.2cm]{images/YiWang.jpg}    
+    \end{minipage}
+	&
+	使用資料科學技巧將龐大複雜的資料轉化成可使用的資訊已經變成炙手可熱的趨勢，因為它能夠協助提升工程設計及決策流程的效率。不過，目前資料科學最大的挑戰，在於如何發展出有效的解析(analytics)結果，並將其整合到生產系統如無論是企業使用的 Hadoop、Spark、Tableau 或各種資料庫，甚至是各式各樣嵌入式感測器所構成的物聯網 (IoT) 環境中等等。本演講將介 MATLAB針對這些挑戰所提出的解決方法和技術，對於那些從未聽說過 MATLAB 的您來說，將會體會到為何 MATLAB 為何會成為全球工程師和科學家進行研發工作的關鍵性分析和建模的高效平台；而對已經是 MATLAB 的使用者來說，本演講也將讓您了解 MATLAB 的最新功能，如何協助您進一步簡化並加速完成您的資料科學任務。
+	
+%王經理專精領域為金融建模、生產導入整合以及MATLAB平行計算。目前，王燚爲金融服務機構和壽險相關MATLAB用戶提供服務，協助建構穩健且功能齊全的金融模型，以便提升工作效率。他也爲美國聯邦儲備銀行、美國聯邦儲備委員會以及其他代表性的商業銀行和對沖基金機構講授MATLAB講座和實機操作課程。王經理擁有多倫多大學計算機工程應用科學學士學位，南加州大學計算機科學碩士學位，2007年加入MathWorks之前，他在伊利諾伊州摩托羅拉工作了七年，從事無線通訊産品的軟體開發。目前於哈佛大學在職進修金融相關課程、並通過了加拿大證券課程考試及CFA二級考試。
+
+\end{tabular}
+
+
+\chapter*{JISE Special Issue}
+\addcontentsline{toc}{chapter}{\protect\numberline{}JISE Special Issue}%
+
+\section*{Special Issue on Interdisciplinary Study on 
+Software Engineering and Data Science}
+
+投稿 TCSE English Session, 並獲選為 Best paper 者，將推薦至此 Special Issue。
+
+\mIndent Data science is a cross-domain research field which integrates information technologies and statistical methods to extract knowledge and insights from various kinds of data. Along with the maturity of big data techniques and infrastructures, a huge amount of data can now be collected, stored, and processed for further exploration of hidden information and values. Recommendation systems, internet of things, and applications adopting machine learning and deep learning etc. are all developed on the basis of the rapid growth of data science. 
+
+\mIndent However, the development of a data system, an information technology system working together with data deluge, is now still more an art than an engineering process. Conventional software engineering methods do not suit the development of a data system. For example, the capability of a data set, e.g., what a data set can be adopted for, cannot be revealed without data discovery. In other words, the requirements of a data system are gradually discovered during system development. The bugs within a data system which corrupt the data may dramatically influence the performance of a data system without generating any faulty behavior. Since data and data science techniques would play an essential role for future information systems, studies of software engineering methods and tools on the development of data systems can be essential. 
+
+\mIndent On the other hand, the statistical data generated from conventional software engineering methods can also be used on improving the methods. Developing and running software generates a large amount of data about the software engineering process and the user usage, which can become useful information with the help of data science. Mining design patterns and performance impact factors are two interesting examples. Adopting data analytics techniques on software engineering becomes an important issue for software engineering study in software development life cycle.
+
+\paragraph{Scopes} The special issue welcomes the original contribution that addresses (1) the software engineering methods for data systems/products and data techniques, and (2) the data analytics techniques for software engineering methods.
+
+\begin{itemize}
+\item Utilities and environments for data engineering, analytics, and applications
+\item Software engineering for big data infrastructure 
+\item Software engineering for data systems/products
+\item Software engineering for IoT 
+\item Software engineering for data processing and engineering
+\item Inductive software engineering 
+\item Data mining on software engineering repositories
+\item Data analytics for software engineering 
+\item Validation and Verification of data systems/products
+\item Systematic methods for data de-identification 
+\end{itemize}
+
+\paragraph{Author’s Guidelines} The submission should follow the formatting guidelines of the Journal of Information Science and Engineering (http://jise.iis.sinica.edu.tw/pages/authors/index.html). Any questions regarding this special issue should be sent to the guest editors. All submitted papers will be reviewed by at least three reviewers and selected based on their originality, significance, relevance, and clarity of presentation. Prospective authors should submit full manuscripts with PDF format electronically to http://journal.iis.sinica.edu.tw/url/jise-seds by 8/30/2017.
+
+\paragraph{Publication Schedule}
+\begin{itemize}
+\item Manuscript submission deadline: 8/30/2017
+\item Notification of Acceptance/Rejection/Revision: 11/30/2017
+\item Final Manuscript Due: 12/31/2017
+\item Tentative Publication Date: 2018
+\item For more information, please contact the guest editors.
+\end{itemize}
+
+\textbf{Guest editors:}
+\begin{itemize}
+\item Yu-Chin Cheng, National Taipei University of Technology, Taiwan, yccheng@csie.ntut.edu.tw
+\item Ji Zhang, The University of Southern Queensland, Australia, Ji.Zhang@usq.edu.au
+\item Chang-Shing Lee, National University of Tainan
+Taiwan, leecs@mail.nutn.edu.tw
+\item Don-Lin Yang, Feng Chia University, Taiwan, dlyang@fcu.edu.tw
+\end{itemize}
+
+\chapter*{TCSE Hacks 黑客松競賽}
+\addcontentsline{toc}{chapter}{\protect\numberline{}TCSE Hacks 黑客松}%
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=1\columnwidth]{images/Hackathon_logo1.png}
+\end{center}
+\end{figure}
+
+TCSE 2017大會的主題為「Software Engineering and Data Science」，將探討軟體工程與資料科學的相關研究，包含應用軟體工程技術於資料科學及應用資料科學於軟體工程。為了推廣軟體工程與資料科學的整合應用，特舉辦此競賽。
+
+\mIndent 今年我們將以 MOOCs (Massive Open Online Courses) 線上學習系統的資料為分析對象。OpenEdu 是台灣主要 MOOCs 平台之一，提供優質且免費的線上學習課程。學習者的學習行為被完整的記錄在系統中，透過分析這些學習行為可以改善日後的線上學習方式。本黑客松的活動希望大家能夠應用程式及資料分析的技巧，挖掘及了解學生值得探討的學習行為模式。
+
+\mIndent 用於競賽的資料包含去識別化後，共約 80 門 OpenEdu 線上課程之學生登出入、觀看影片、回答線上問題、留言板討論等紀錄。而我們的最終目的是，希望參賽各組可以透過這些資料建立期初表現與期末表現的預估模型。因此在黑客松複賽前，我們將提供修習記錄等資料供參賽隊伍進行資料清理與理解的相關工作，而比賽當天主辦方將提供其中約 56 門課學生的期末表現，作為訓練資料集的標籤，然後使用餘下約 24 門課學生的期末表現結果，作為測試資料標籤。
+
+\mIndent 各組所建構之模型在測試資料集上的表現(如準確率、召回率等) 為競賽評分的主要依據，此外，為了鼓勵參賽隊伍使用軟體工程方法，主辦單位也將於黑客松進行過程中觀察各組的工作狀況，作為軟體工程實務獎項的評分依據。
+
+重要日期
+
+\begin{itemize}
+\item MATLAB 工作坊：5/31
+\item 初賽報名截止：6/1
+\item 初賽：6/2-6/15
+\item 複賽：7/7-7/8, 逢甲大學
+\end{itemize}
+
+\begin{bottompar}
+活動協辦：ITSA社群運算與巨量資料跨校資源中心，OpenEdu, 逢甲大學大數據中心 \\
+活動贊助：鈦坦科技，鈦思科技，Picowork, 資拓宏宇, 誠雲科技, 台灣軟體工程學會
+\end{bottompar}
+
+\begin{comment}
+\section*{參賽辦法}
+
+\begin{itemize}
+\item 需為在校學生組隊參加，每組 2-4 人，需有一位學校教師推薦或領隊。
+
+\item 初賽：
+	\begin{itemize}
+	\item 6/1  (四) 前報名，每組 2-4 名為限。
+	\item 6/2（五）上午10:00 初賽題目公布在網路，回傳結果必須正確，依回覆速度排名，最多取十名進入複賽，於 6/15 日公布於網站。	
+	\end{itemize}
+
+\item 複賽：
+	\begin{itemize}
+	\item 	外縣市（非台中市區）支隊伍，大會補助 2,000 住宿費。
+	7/7-7/8 於逢甲大學 TCSE 2017會場報到後進行複賽。
+	7/8 上午10:30-12:00 各組報告，選出名次。
+	\end{itemize}
+
+\item 設備：
+	\begin{itemize}
+	\item 研討會提供電腦教室、電腦網路、無線網路，可自行帶電腦。
+評分標準
+	\item 精準度：預估的精準度。
+	\item 軟體工程實務：開發過程中是否發揮團隊合作精神，及相關的軟體工程實務做法，例如開發方法論，設計方法，測試方法等。此項目的評分來自：(1) 過程中委員的觀察 (2) 最終報告時團隊的簡報。
+	\end{itemize}
+\end{itemize}
+
+\end{itemize}
+ 
+\section*{獎金}
+\begin{itemize}
+\item 第一名：新台幣 15,000（1 名）
+\item 鈦坦科技軟體工程實務特別獎：新台幣 8,000（1 名）
+\item MATLAB 特別獎：新台幣  5,000（1 名）
+\item 黑客松精神獎：3,000 (1-5 名)
+\item 一組僅能獲得一個獎項。
+\end{itemize}
+
+\end{comment}
+
+\ifShowPaper
+\chapter{Software Engineering, Software Testing, Web Engineering and AI}
+
+\TimeOne
+
+\section{\TitleOneA}
+\subsection*{\ChairOneA}
+\ListOneA
+\PaperOneA
+
+\section{\TitleOneB}
+\subsection*{\ChairOneB}
+\ListOneB
+\PaperOneB
+
+\section{\TitleOneC}
+\subsection*{\ChairOneC}
+\ListOneC
+\PaperOneC
+
+\section{\TitleOneD}
+\subsection*{\ChairOneD}
+\ListOneD
+\PaperOneD
+
+\chapter{English paper, IoT and Industry Talk I}
+\TimeTwo
+
+\section{\TitleTwoA}
+\subsection*{\ChairTwoA}
+\ListTwoA
+\PaperTwoA
+
+\section{\TitleTwoB}
+\subsection*{\ChairTwoB}
+\ListTwoB
+\PaperTwoB
+
+\section{\TitleTwoC}
+\subsection*{\ChairTwoC}
+\ListTwoC
+\PaperTwoC
+
+\section{\TitleTwoD}
+\subsection*{\ChairTwoD}
+\ListTwoD
+
+\subsection*{題目：空手、緊握、到放手 – 敏捷路上學到的5件事}
+
+\subsubsection*{演講者：林裕丞 總經理 / 新加坡鈦坦科技}
+
+為什麼吃飽沒事做要跑敏捷？從一開始新加坡5人，到現在跨國150人，這過程中有喜悅、有掙扎、也有不少的學習和成長。這是一個鈦坦科技十年來的演化史，經由長時間跨度與宏觀組織角度，跟大家分享我們在組織文化和產品面上的改變和學習。在這次演講中您將會有以下收穫：(1) 什麼時候要跑敏捷？(2) 如何評估敏捷的成效？(3) 在組織管理上有那些工具和方法？ 
+
+
+\subsection*{題目：協同式雲端作業系統 - 創造雲端社會的新生態}
+
+\subsubsection*{演講者：林俊孝 Chief Technology Officer/ Picowork}
+
+現今的生活大量的依賴第三方應用服務來進行，然而不同的應用服務和服務平台間存在著商業經營上、技術架構上、及功能發展上及壁壘（Boundry），帶來產業全方位協同的挑戰。「協同式雲端作業系統」以作業系統的角度出發，透過技術思維上的創新，將整個網際網路看成是全球最大的一部計算機，重新定義了網際網路的定位，使各行各業可以擁有自己的雲端作業系統環境，又可以透過自己的雲端環境，與任何人(同事、顧客、夥伴、朋友)自由地進行協同作業，也能以最低的成本，讓過去、現在、及未來的網路資訊系統和網路資源擴充到雲端環境中，最後亦能藉此產生自我的大數據，為創造雲端社會的新生態，帶來了新的可能。
+
+
+\chapter{Best regular paper, Software testing II, and Demo paper}
+
+\TimeThree
+
+\section{\TitleThreeA}
+\subsection*{\ChairThreeA}
+\ListThreeA
+\PaperThreeA
+
+
+\section{\TitleThreeB}
+\subsection*{\ChairThreeB}
+\ListThreeB
+\PaperThreeB
+
+\section{\TitleThreeC}
+\subsection*{\ChairThreeC}
+\ListThreeC
+\PaperThreeC
+
+\chapter{Software Engineering II, Software Application, and Industry Talk II}
+\TimeFour
+
+\section{\TitleFourA}
+\subsection*{\ChairFourA}
+\ListFourA
+\PaperFourA
+
+\section{\TitleFourB}
+\subsection*{\ChairFourB}
+\ListFourB
+\PaperFourB
+
+\section{\TitleFourC}
+\subsection*{\ChairFourC}
+\ListFourC
+\PaperFourC
+
+\section{\TitleFourD}
+\subsection*{\ChairFourD}
+\ListFourD
+
+\fi %ifShowPaper
+
+
+
+\includepdf[fitpaper]{back} %back page
+
+
+%\chapter*{會場平面圖}
+
+%\chapter*{接駁車與計程車資訊}
+
+\end{document} 

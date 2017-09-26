@@ -1,0 +1,111 @@
+\documentclass[20pt, a4paper, landscape]{extbook}
+\usepackage[top=.65in, bottom=0.7in, left=.5in, right=.5in]{geometry}
+
+%虛擬章節用的，沒有意義
+\newif\ifJustHint			\JustHintfalse
+
+\ifJustHint \chapter{Setting} \fi
+
+\input{prefix}
+
+\usepackage{array}% http://ctan.org/pkg/array
+\usepackage{titlesec}
+
+\newif\ifShowPaper	\ShowPapertrue
+\newif\ifAllPage 			\AllPagefalse
+\newif\ifOnePage 		\OnePagetrue
+\newif\ifShowNotify	\ShowNotifyfalse
+
+\input{paperList2}
+
+\newenvironment{bottompar}{\par\vspace*{\fill}}{}
+\renewcommand\thesection{\thechapter\Alph{section}}
+\linespread{1} 
+\setlength{\parskip}{0.7em}     
+\setlength\parindent{0pt}
+\newcommand{\mIndent}{\hspace{.5cm}}
+\renewcommand{\chaptername}{Section}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}%
+\fancyhf{} % sets both header and footer to nothing
+\renewcommand{\headrulewidth}{0pt}
+\chead{}
+\rhead{\begin{footnotesize}
+TCSE 2017
+\end{footnotesize}}
+\lhead{}
+%\lhead{\fancyplain{}{\rightmark }}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
+
+\begin{document}  
+
+\chapter*{分場詳細議程}
+
+\subsection*{1A: \TitleOneA}
+\subsubsection*{\ChairOneA}
+\ListOneA
+
+\subsection*{1B: \TitleOneB}
+\subsubsection*{\ChairOneB}
+\ListOneB
+
+\subsection*{1C: \TitleOneC}
+\subsubsection*{\ChairOneC}
+\ListOneC
+
+\subsection*{1D: \TitleOneD}
+\subsubsection*{\ChairOneD}
+\ListOneD
+
+\subsection*{2A: \TitleTwoA}
+\subsubsection*{\ChairTwoA}
+\ListTwoA
+
+\subsection*{2B: \TitleTwoB}
+\subsubsection*{\ChairTwoB}
+\ListTwoB
+
+\subsection*{2C: \TitleTwoC}
+\subsubsection*{\ChairTwoC}
+\ListTwoC
+
+\subsection*{2D: \TitleTwoD}
+\subsubsection*{\ChairTwoD}
+\ListTwoD
+
+\subsection*{3A: \TitleThreeA}
+\subsubsection*{\ChairThreeA}
+\ListThreeA
+
+\subsection*{3B: \TitleThreeB}
+\subsubsection*{\ChairThreeB}
+\ListThreeB
+
+\subsection*{3C: \TitleThreeC}
+\subsubsection*{\ChairThreeC}
+\ListThreeC
+
+\subsection*{4A: \TitleFourA}
+\subsubsection*{\ChairFourA}
+\ListFourA
+
+\subsection*{4B: \TitleFourB}
+\subsubsection*{\ChairFourB}
+\ListFourB
+
+\subsection*{4C: \TitleFourC}
+\subsubsection*{\ChairFourC}
+\ListFourC
+
+\subsection*{4D: \TitleFourD}
+\subsubsection*{\ChairFourD}
+\ListFourD
+
+
+\end{document} 

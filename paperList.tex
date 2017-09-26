@@ -1,0 +1,374 @@
+
+\ifJustHint \chapter{Layout setting} \fi
+%show ONE page paper, or Full papers
+\newcommand{\showPaper}[1]{
+\ifOnePage \includepdf[pages={1}, scale=1.05, pagecommand={}]{papers/#1} \fi
+\ifAllPage \includepdf[pages={-}, scale=1.05, pagecommand={}]{papers/#1} \fi
+}
+
+%Use in the session list, showing all authors in a session
+\newcommand{\authorWidth}{6cm}
+\newcommand{\titleWidth}{10cm}
+\newcommand{\tableHeader}{ID & 作者 & 論文名稱 \\ \hline}
+
+%Message
+\newcommand{\updateNameNotify}{\newline \newline * 作者與論文名稱取自 \href{https://easychair.org/conferences/?conf=tcse2017}{EasyChair} 投稿系統的欄位訊息，若需修改可於 6/15 日前上系統更正。大會手冊最終版會以 [姓-名] (regular paper) 或 [First Name-Last Name] (English paper) 的格式呈現。}
+
+\ifJustHint \chapter{Time and Location} \fi
+
+\ifJustHint \section{Keynote and Panel} \fi
+
+\newcommand{\TimeKeynoteOne}{時間: 9:30-10:20, 7/7}
+\newcommand{\TimeKeynoteTwo}{時間: 9:30-10:20, 7/8}
+\newcommand{\TimePanel}{時間: 16:50, 7/7}
+\newcommand{\LocationKeynoteOne}{地點：學思樓 第九國際會議廳}
+\newcommand{\LocationKeynoteTwo}{地點：學思樓 第九國際會議廳}
+\newcommand{\LocationPanel}{地點：學思樓 第九國際會議廳}
+
+\newcommand{\TimeIndustryOne}{時間：13:20-14:05 (2D), 7/7}
+\newcommand{\TimeIndustryTwo}{時間：14:05-14:50 (2D), 7/7}
+\newcommand{\TimeIndustryThree}{時間：10:40-11:25 (4D), 7/8}
+\newcommand{\LocationIndustryOne}{地點：學思樓 第九國際會議廳}
+\newcommand{\LocationIndustryTwo}{地點：學思樓 第九國際會議廳}
+\newcommand{\LocationIndustryThree}{地點：學思樓 第九國際會議廳}
+
+\ifJustHint \section{Time and location} \fi
+
+\newcommand{\TimeOne}{時間: 10:40-12:00, 7/7}
+\newcommand{\TimeTwo}{時間: 13:20-14:50, 7/7}
+\newcommand{\TimeThree}{時間: 15:00-16:30, 7/7}
+\newcommand{\TimeFour}{時間: 10:40-12:00, 7/8}
+\newcommand{\LocationA}{地點: 學思樓 學101}
+\newcommand{\LocationB}{地點: 學思樓 學102}
+\newcommand{\LocationC}{地點: 學思樓 學103}
+\newcommand{\LocationD}{地點: 學思樓 學104}
+\newcommand{\LocationE}{地點: 學思樓 學105}
+
+
+\ifJustHint \chapter{Session 1 data} \fi
+\ifJustHint \section{1A} \fi
+\newcommand{\TitleOneA}{Software Engineering I}
+\newcommand{\ChairOneA}{Chairman:林哲正/高雄師範大學，\TimeOne，\LocationA}
+\newcommand{\ListOneA}{
+\begin{tabular}{l p{\authorWidth} p{\titleWidth}}
+\tableHeader
+6	&	Shuo-Hong Kao and Dow-Ming Yeh & 	程式語言語法視覺化工具雛型	\\
+38	&	呂信緯, 陳英一 & 	以Nodejs非同步設計框架建構語意分析加值系統之研究	\\
+58	&	郭忠義, 許聖泉 	& 程式碼動態結構抄襲鑑定	\\
+70	&	薛念林, 莫剛, 陳錫民 & 	OpenEdu 磨課師系統學習資料分析報告	\\
+69	&	Chang-Yen Lee, Hui-Juan Chen and Che-Chern Lin	 & 從設計與實作觀點探討模糊專家系統在補救教材的應用 – 以高職數位邏輯課程為例	\\
+\end{tabular}
+}
+\newcommand{\PaperOneA}{
+\showPaper{TCSE_2017_paper_6.pdf}
+%\showPaper{TCSE_2017_paper_38.pdf}
+%\showPaper{TCSE_2017_paper_58.pdf}
+%\showPaper{TCSE_2017_paper_70.pdf}
+%\showPaper{TCSE_2017_paper_69.pdf}
+}
+
+\ifJustHint \section{1B} \fi
+\newcommand{\TitleOneB}{Software Testing I}
+\newcommand{\ChairOneB}{Chairman: 林楚迪/嘉義大學，\TimeOne，\LocationB}
+\newcommand{\ListOneB}{
+\begin{tabular}{l p{\authorWidth} p{\titleWidth}}
+\tableHeader
+17	&	Wan-Chuan Lee and Yung-Pin Cheng& 	運用壓力測試腳本的同步來增進壓力測試效能 	\\
+21	&	薛念林 , 黃紫芳 & 	測試驅動之設計樣式測試模型設計與實作	\\
+47	&	張振鴻, 林迺衛 & 	基於限制邏輯圖的單元測試案例產生器	\\
+59	&	郭忠義, 彭柔瑄 & 	Android 應用程式之資訊安全檢測	\\
+14	&	劉建宏, 陳偉凱, 黃映瑞, 林容榆 & 	Android手機手錶互動應用程式之相容性測試研究	\\
+\end{tabular}
+}
+\newcommand{\PaperOneB}{
+\showPaper{TCSE_2017_paper_17.pdf}
+%\showPaper{TCSE_2017_paper_21.pdf}
+%\showPaper{TCSE_2017_paper_47.pdf}
+%\showPaper{TCSE_2017_paper_59.pdf}
+%\showPaper{TCSE_2017_paper_14.pdf}
+}
+
+
+\ifJustHint \section{1C} \fi
+\newcommand{\TitleOneC}{Web Engineering}
+\newcommand{\ChairOneC}{Chairman: 范姜永益/輔仁大學，\TimeOne，\LocationC}
+\newcommand{\ListOneC}{
+\begin{tabular}{l p{\authorWidth} p{\titleWidth}}
+\tableHeader
+3	&	Kao Pin, Huo Kuan-Hua, Chang Yi-Tzu, Cheng Yo-Tzu and Hu Chung-Hua	&  建構商轉雲端管理平台以應用於異質虛擬化環境之雲資源自動移轉與配置	\\
+4	&	Chih-Hung Chang, Chih-Ming Hsieh, Wen-Ching Chen, Y.J. Liao and C.M. Wang	& 具情境感知之個人化資訊服務框架	\\
+15	&	陳偉凱, 劉建宏, 黃映瑞, 陳科銘 & 	以漸增式使用者指引增加爬蟲器之網頁覆蓋率	\\
+27	&	石聖銓, 范姜永益 & 	應用遺傳規劃法於Web Services的服務品質預測	\\
+39	&	Li-Wei Huang and Ing-Yi Chen& 	運用Express中介軟體框架設計非同步責任鏈網路服務之研究	\\
+\end{tabular}
+}
+\newcommand{\PaperOneC}{
+\showPaper{TCSE_2017_paper_3.pdf}
+%\showPaper{TCSE_2017_paper_4.pdf}
+%\showPaper{TCSE_2017_paper_15.pdf}
+%\showPaper{TCSE_2017_paper_27.pdf}
+%\showPaper{TCSE_2017_paper_39.pdf}
+}
+
+\ifJustHint \section{1D} \fi
+\newcommand{\TitleOneD}{Artificial Intelligence}
+\newcommand{\ChairOneD}{Chairman:  郭忠義/台北科技大學，\TimeOne，\LocationD}
+\newcommand{\ListOneD}{
+\begin{tabular}{l p{\authorWidth} p{\titleWidth}}
+\tableHeader
+25	&	蔡佳翰, 蘇翊翔, 謝孟諺 & 	以中文關鍵字為基礎之隱性回饋的評分計算	\\
+41	&	Cheng-Yi Chang and Ing-Yi Chen& 	基於Google Cloud Platform設計高效能日誌分析平台之研究	\\
+56	&	Cheng Wei Wu, Yi Ren, Muhammad Alfiansyah, Hsin Wei Kao, Chen Wei Hsin and Yu-Chee Tseng	& 基於智慧購物車之排隊辨識	\\
+78	&	詹于瑩, 李婉如, 吳紹薇, 李心瑜, 呂孟蘋, 陳奕中, 陳錫民 & 	GPS定位影像補償系統	\\
+57	&	郭忠義, 呂紹清 	& M2M  語意規則推論應用架構設計研究	\\
+\end{tabular}
+}
+\newcommand{\PaperOneD}{
+\showPaper{TCSE_2017_paper_25.pdf}
+%\showPaper{TCSE_2017_paper_41.pdf}
+%\showPaper{TCSE_2017_paper_56.pdf}
+%\showPaper{TCSE_2017_paper_78.pdf}
+%\showPaper{TCSE_2017_paper_57.pdf}
+}
+
+
+\ifJustHint \chapter{Session 2 data} \fi
+\ifJustHint \section{2A} \fi
+\newcommand{\TitleTwoA}{Best English paper}
+\newcommand{\ChairTwoA}{Chairman: 周忠信/東海大學，委員：劉立頌/中正大學，馬尚彬/海洋大學，\TimeTwo，\LocationA}
+\newcommand{\ListTwoA}{
+\begin{tabular}{l p{\authorWidth} p{\titleWidth}}
+\tableHeader
+30	&	Ru-Wei Fu and Farn Wang	& Automatic Device Farm Management for the Testing of Android Mobile Apps	\\
+45	&	Chi Wen Chen and Farn Wang& 	Automated Cloud Sandbox Deployment for Implementing DevOps	\\
+53	&	Min-Huang Ho, Win-Tsung Lo, Ruey-Kai Sheu, Yen-Lin Lee and Deron Liang	& Method of Distributed Node Management for High-Availability Clusters based on Kernel Virtual Machine	\\
+63	&	Hwai-Jung Hsu and Yves Lin	& How Agile Works in a Software Corporation: An Empirical Study of Assessing Agile Methods from Viewpoints of Business Data Analytics	\\
+75	&	Chien-Hung Liu and Woie-Kae Chen & 	Coupling Analysis and Visualization of KDT Scripts	\\
+77	&	Tze Suen Lim, Yi Chung Chen, Sheng Min Chiu, Wei Lun Wang and Wei Hung Lin	&  Time Series Skyline Query and Its Neural Filter	\\
+\end{tabular}
+}
+\newcommand{\PaperTwoA}{
+\showPaper{TCSE_2017_paper_30.pdf}
+%\showPaper{TCSE_2017_paper_45.pdf}
+%\showPaper{TCSE_2017_paper_53.pdf}
+%\showPaper{TCSE_2017_paper_63.pdf}
+%\showPaper{TCSE_2017_paper_75.pdf}
+%\showPaper{TCSE_2017_paper_77.pdf}
+}
+
+\ifJustHint \section{2B} \fi
+\newcommand{\TitleTwoB}{English paper}
+\newcommand{\ChairTwoB}{Chairman: 林迺衛/中正大學 ，\TimeTwo，\LocationB}
+\newcommand{\ListTwoB}{
+\begin{tabular}{l p{\authorWidth} p{\titleWidth}}
+\tableHeader
+2	&	Chun-Hsiung Tseng, Lin Hui, Yung-Hui Chen and Jia-Long Li& 	A GPS Navigation System Leveraging Voice Based User Interface for Blind People	\\
+28	&	Jiun-Hao Lin and Farn Wang	& User-Friendly Trace Viewer for Android Apps Testing	\\
+31	&	Jui Chieh Tai and Farn Wang	& Cross-Browser Compatibility Testing of Web Applications	\\
+34	&	Guang-Qi Wang and Farn & Wang	Automated Testing for Quality Android Applications	\\
+40	&	Jyun-Hua Jiang, Lin-Huang Chang and Tsung-Han Lee &  Wireless sensor network under asynchronous mechanism to dynamically adjust the sleep schedule	\\
+52	&	Ming-Chi Liu and Yueh-Min Huang & 	Performing a phenomenographic text mining to understand the students' experiences of software programming	\\
+\end{tabular}
+}
+\newcommand{\PaperTwoB}{
+\showPaper{TCSE_2017_paper_2.pdf}
+%\showPaper{TCSE_2017_paper_28.pdf}
+%\showPaper{TCSE_2017_paper_31.pdf}
+%\showPaper{TCSE_2017_paper_34.pdf}
+%\showPaper{TCSE_2017_paper_40.pdf}
+%\showPaper{TCSE_2017_paper_52.pdf}
+}
+
+
+\ifJustHint \section{2C} \fi
+\newcommand{\TitleTwoC}{IoT}
+\newcommand{\ChairTwoC}{Chairman: 廖峻峰/政治大學，\TimeTwo，\LocationC}
+\newcommand{\ListTwoC}{
+\begin{tabular}{l p{\authorWidth} p{\titleWidth}}
+\tableHeader
+8	&	邱大洲, 陳文輝 & 	以智慧型手機感測器結合機器學習演算法之雲端居家行為辨識系統	\\
+43	&	徐士展, 戴偉竹, 盧韋宏, 蔡漢霖, 趙宥勝, 劉立頌	& 具易用性之智慧家庭控制系統(A Controlling System in Smart Home with Usability)	\\
+83 &  李允中, 任哲晨, 吳佳芷 & 物聯網中介軟體：感測器服務及網路服務與複雜事件處理之整合 \\
+68	&	郭家旭, 李文廷, 馬毓棣, 林敬祥 	& iRollCall - NFC輕量級行動點名服務系統	\\
+71	&	Chia-Hsu Kuo, Wen-An Tsai and Tzung-Shi Chen	 & 無線感測網路的行動充電策略之研究	\\
+32	&	陳映如, 廖峻鋒 & 	資源導向智慧家庭服務維運機制的設計與實現	\\
+33	&	盧威辰, 廖峻鋒	& 適用於數位互動藝術的聚合式BLE-MQTT 閘道設計	\\
+\end{tabular}
+}
+
+\newcommand{\PaperTwoC}{
+\showPaper{TCSE_2017_paper_8.pdf}
+%\showPaper{TCSE_2017_paper_43.pdf}
+%\showPaper{TCSE_2017_paper_83.pdf}
+%\showPaper{TCSE_2017_paper_68.pdf}
+%\showPaper{TCSE_2017_paper_71.pdf}
+%\showPaper{TCSE_2017_paper_32.pdf}
+%\showPaper{TCSE_2017_paper_33.pdf}
+}
+
+\ifJustHint \section{2D} \fi
+\newcommand{\TitleTwoD}{Industry Talk I}
+\newcommand{\ChairTwoD}{Chairman:英家慶/逢甲大學 ，\TimeTwo，\LocationIndustryOne}
+\newcommand{\ListTwoD}{
+\begin{tabular}{l p{\authorWidth} p{\titleWidth}}
+\tableHeader
+ &林裕丞 總經理 / 新加坡鈦坦科技 &  空手、緊握、到放手 – 敏捷路上學到的 5 件事 \\
+ & 林俊孝 Chief Technology Officer/ Picowork  & 協同式雲端作業系統 - 創造雲端社會的新生態 \\
+\end{tabular}
+}
+
+\ifJustHint \chapter{Session 3 data} \fi
+\ifJustHint \section{3A} \fi
+\newcommand{\TitleThreeA}{Best regular paper}
+\newcommand{\ChairThreeA}{Chairman: 梁德容/中央大學 ，委員：劉建宏/台北科技大學，孔崇旭/台中教育大學，\TimeThree，\LocationA}
+\newcommand{\ListThreeA}{
+\begin{tabular}{l p{\authorWidth} p{\titleWidth}}
+\tableHeader
+9	&	廖峻鋒, 鄭敬儒, 陳恭, 賴晨禾, 邱天 & 	基於行為驅動開發製程的區塊鏈智能合約整合測試服務平台	\\
+20	&	徐偉哲, 鄭永斌 	& Virtual Objects for Program Visualization in xDIVA	\\
+49	&	李信杰, 黃琪恩, 游傑麟 & 	以Text-Attribute-Context為基礎識別演化網頁中變動元素之方法與自動化網頁回歸測試之實務應用	\\
+60	&	郭忠義, 潘家偉 	& 應用堆疊式降噪自動編碼器建構學生退學預測模型	\\
+65	&	陳鵬中, 馬尚彬, 呂致緯 & 	LODE: 鏈結開放資料之建立、查詢與服務生成平台	\\
+74	&	Wing Lun Siu, Yi-Chung Chen, Kuo-Cheng Ting, Don-Lin Yang and Hsi-Min Chen	& 在社群網路中利用m-代表性天際線查詢搜尋m-相似的用戶	\\
+\end{tabular}
+}
+\newcommand{\PaperThreeA}{
+\showPaper{TCSE_2017_paper_9.pdf}
+%\showPaper{TCSE_2017_paper_20.pdf}
+%\showPaper{TCSE_2017_paper_49.pdf}
+%\showPaper{TCSE_2017_paper_60.pdf}
+%\showPaper{TCSE_2017_paper_65.pdf}
+%\showPaper{TCSE_2017_paper_74.pdf}
+}
+
+
+\ifJustHint \section{3B} \fi
+\newcommand{\TitleThreeB}{Software Testing II}
+\newcommand{\ChairThreeB}{Chairman: 王凡/台灣大學，\TimeThree，\LocationB}
+\newcommand{\ListThreeB}{
+\begin{tabular}{l p{\authorWidth} p{\titleWidth}}
+\tableHeader
+29	&	Yueh-Ru Lin, Ting-An Yeh and Cheng-Zen Yang	& Android手機Unity遊戲監測工具的設計與實作	\\
+48	&	吳尚諭, 林迺衛 	& 基於限制邏輯圖的測試覆蓋標準管理及邊界測試案例產生	\\
+54	&	李培琴, 林迺衛 	& 類別層級單元測試的限制式測試案例產生器	\\
+55	&	張朝翔, 林迺衛 	& 測試物件初始化程序的自動產生	\\
+64	&	唐書麒, 林楚迪 	& 奠基於主題模型之測試個案排序改進方法	\\
+61	&	郭忠義, 蘇翊棠, 賴岱佑 	& 基於雲端分散式環境多用戶火災逃生系統	\\
+36	&	Mao-Jhe Fong, Farn Wang and Yu Ting Chang	&  Black-box Test Case Generation for Memory Leaks of Android Apps	\\
+\end{tabular}
+}
+\newcommand{\PaperThreeB}{
+\showPaper{TCSE_2017_paper_29.pdf}
+%\showPaper{TCSE_2017_paper_48.pdf}
+%\showPaper{TCSE_2017_paper_54.pdf}
+%\showPaper{TCSE_2017_paper_55.pdf}
+%\showPaper{TCSE_2017_paper_64.pdf}
+%\showPaper{TCSE_2017_paper_61.pdf}
+%\showPaper{TCSE_2017_paper_36.pdf}
+}
+
+
+
+\ifJustHint \section{3C} \fi
+\newcommand{\TitleThreeC}{Demo paper}
+\newcommand{\ChairThreeC}{Chairman: 李信杰/成功大學，委員：鄭永斌/中央大學，陳英一/台北科技大學，\TimeThree，\LocationC}
+\newcommand{\ListThreeC}{
+\begin{tabular}{l p{\authorWidth} p{\titleWidth}}
+\tableHeader
+11	&	Wei-Yu Lai and Han-Ming Wu	& drEDA：一個基於維度縮減技術的互動式探索性資料分析網頁應用程式	\\
+44	&	薛念林, 梁少榕 	& 應用於資訊教育之可擴充性象棋對奕平台	\\
+50	&	Chu-Yu Wang, Yung-Li Hu, Yao-Tung Tsou, Yennun Huang and Sy-Yen Kuo	& A Testing Tool for Mobile Edge Computing Applied on Smart Traffic	\\
+62	&	Chia-Hsu Kuo, Li-Wei Chen, Jing-Shiang Lin and Wen-An Tsai	&  iScreens – 智慧型多螢幕eSOP管理工具	\\
+66	&	何靖霆, 馬尚彬, 戴碩宏 	& 基於流程引擎之對話機器人框架	\\
+67	&	李霽烝, 陳薇涵, 陳錫民 	& 基於共享機制的計程車評價分享平台	\\
+\end{tabular}
+}
+\newcommand{\PaperThreeC}{
+\showPaper{TCSE_2017_paper_11.pdf}
+%\showPaper{TCSE_2017_paper_44.pdf}
+%\showPaper{TCSE_2017_paper_50.pdf}
+%\showPaper{TCSE_2017_paper_62.pdf}
+%\showPaper{TCSE_2017_paper_66.pdf}
+%\showPaper{TCSE_2017_paper_67.pdf}
+}
+
+
+\ifJustHint \chapter{Session 4 data} \fi
+\ifJustHint \section{4A} \fi
+\newcommand{\TitleFourA}{Data Engineering}
+\newcommand{\ChairFourA}{Chairman: 何承遠/亞洲大學，\TimeFour，\LocationD}
+\newcommand{\ListFourA}{
+\begin{tabular}{l p{\authorWidth} p{\titleWidth}}
+\tableHeader
+%5	&	黃仲瑜 	& 調整 HPA Scoring 方法以排序癌症候選標記	\\
+42	&	Chang You-Wei and Chihhsiong Shih	& 以最小偏差基因及粒子群演算法分析缺血性中風轉出血性中風成因探討	\\
+46	&	葉錦文, 葉明憲, 葉家舟, 邱宏彬, 吳梅君, 林迺衛 & 	基於癌症登記資料庫的中西醫合併治療的肺癌存活分析	\\
+79	&	侯修平, 許懷中, 吳榮彬, 楊東麟 	& 根據Open edX的課程設計的競賽式學習平台架構	\\
+80	&	邱毓宸, 許懷中, 吳榮彬, 楊東麟 	& 使用線上學習行為紀錄預測學生的學習成效	\\
+76	&	Ming-Chi Liu, Chen-Hsiang Yu, Jungpin Wu and An-Chi Liu	 & System log analysis for understanding user engagement: The case of MOOCs	\\
+35	&	Cheng-Yuan Ho	& 電子票證大數據應用於台中市公車旅客型態之研究	\\
+\end{tabular}
+}
+\newcommand{\PaperFourA}{
+\showPaper{TCSE_2017_paper_42.pdf}
+%\showPaper{TCSE_2017_paper_46.pdf}
+%\showPaper{TCSE_2017_paper_79.pdf}
+%\showPaper{TCSE_2017_paper_80.pdf}
+%\showPaper{TCSE_2017_paper_76.pdf}
+%\showPaper{TCSE_2017_paper_35.pdf}
+}
+
+
+\ifJustHint \section{4B} \fi
+\newcommand{\TitleFourB}{Software Engineering II}
+\newcommand{\ChairFourB}{Chairman: 李文廷/高雄師範大學，\TimeFour，\LocationB}
+\newcommand{\ListFourB}{
+\begin{tabular}{l p{\authorWidth} p{\titleWidth}}
+\tableHeader
+72	&	黃俊詠, 陳錫民, 陳奕中 & 	以虛擬容器為基底的IoT服務管理機制	\\
+10	&	Feng-Shou Yu and Wei-Ling Chen & 	一個新的系統耦合度度量 (A New System Coupling Metric)	\\
+12	&	Chang-Yen Tsai, Kuo-Hsun Hsu and Chun-Han Lin	 & Identifying Aspects from Cross-Version Revision History in Software Development	\\
+18	&	薛念林, 廖健宏  & 	以 3D 視覺化技術為基礎之開源軟體品質分析	\\
+23	&	劉建宏, 陳偉凱, 陳炳宏, 楊凱霖	 & 支援程式作業壞味道偵測與批改之工具	\\
+73	&	李文廷, 許博淳 & 	應用設計結構矩陣分析軟體設計氣味	\\
+\end{tabular}
+}
+\newcommand{\PaperFourB}{
+\showPaper{TCSE_2017_paper_72.pdf}
+%\showPaper{TCSE_2017_paper_10.pdf}
+%\showPaper{TCSE_2017_paper_12.pdf}
+%\showPaper{TCSE_2017_paper_18.pdf}
+%\showPaper{TCSE_2017_paper_23.pdf}
+%\showPaper{TCSE_2017_paper_73.pdf}
+}
+
+\ifJustHint \section{4C} \fi
+\newcommand{\TitleFourC}{Application}
+\newcommand{\ChairFourC}{Chairman: 徐國勛/台中教育大學，\TimeFour，\LocationC}
+\newcommand{\ListFourC}{
+\begin{tabular}{l p{\authorWidth} p{\titleWidth}}
+\tableHeader
+13	&	林桂任, 張君丞, 陳世軒, 陳克勤 許乙清  & 	整合健康存摺與開放資料於物聯網架構之用藥安全系統	\\
+19	&	Jia-Ching Jian and Yung-Ping Cheng	 & Very High Precision Optical Character Recognition for Clean-Fixed-Sized True Type Character	\\
+22	&	楊博善, 黃俊堯, 高國峰, 廖宜恩 & 	從電視節目到鏈結開放資料的轉換系統設計與開發	\\
+24	&	陳湘諭, 鄭為民	 & 改良之專利資料庫檢索系統	\\
+26	&	Su Yi-Shiang, 蔡佳翰, 謝孟諺	 & 結合擴增實境與OpenCV於服飾業之研究	\\
+\end{tabular}
+}
+\newcommand{\PaperFourC}{
+\showPaper{TCSE_2017_paper_13.pdf}
+%\showPaper{TCSE_2017_paper_19.pdf}
+%\showPaper{TCSE_2017_paper_22.pdf}
+%\showPaper{TCSE_2017_paper_24.pdf}
+%\showPaper{TCSE_2017_paper_26.pdf}
+%\showPaper{TCSE_2017_paper_71.pdf}
+}
+\ifJustHint \section{4D} \fi
+\newcommand{\TitleFourD}{Industry talk II}
+\newcommand{\ChairFourD}{Chairman: 許懷中/逢甲大學，\TimeFour，\LocationIndustryThree}
+\newcommand{\ListFourD}{
+\begin{tabular}{l p{\authorWidth} p{\titleWidth}}
+\tableHeader
+ &王燚 / MathWorks財務工程技術經理  & 資料科學在物聯網之應用 \\
+\end{tabular}
+}

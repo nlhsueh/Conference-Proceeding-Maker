@@ -1,0 +1,229 @@
+% 中文
+\usepackage{fontspec,xltxtra,xunicode}  
+\usepackage{xeCJK} % For windows OS CJK
+\defaultfontfeatures{Mapping=tex-text}  
+%\setromanfont{SimSun} %中文
+\XeTeXlinebreaklocale “zh”  
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt 
+\setmainfont{Times New Roman} % For windows OS CJK
+\setCJKmainfont[AutoFakeBold=1,AutoFakeSlant=.3]{標楷體} % For windows OS CJK
+
+\newCJKfontfamily\Kai{標楷體}       %定義指令\Kai則切換成標楷體
+\newCJKfontfamily\Hei{微軟正黑體}   %定義指令\Hei則切換成正黑體
+\newCJKfontfamily\NewMing{新細明體} %定義指令\NewMing則切換成新細明體
+\newCJKfontfamily\WeiBei{魏碑-繁} %定義指令\NewMing則切換成新細明體
+
+
+\usepackage{url}
+\usepackage[bookmarks]{hyperref}
+\usepackage{tabularx}
+\usepackage{comment}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{framed} %有框的文字
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{longtable}
+\usepackage{makeidx} 
+\usepackage{amsmath} 
+\usepackage{centernot} %\not implies
+\usepackage{csvsimple}
+\usepackage{tikz} % include icon
+\usepackage{blindtext}
+\usepackage{tcolorbox}
+\usepackage{minitoc} % toc in each chapter
+\usepackage[cc]{titlepic}% title image
+\tcbuselibrary{breakable}
+\usepackage[inline, shortlabels]{enumitem}
+\usepackage{wrapfig}
+
+
+
+% itemize and enumerate
+\usepackage{enumitem}
+\setlist[enumerate]{itemsep=-2pt,topsep=3pt}
+\setlist[itemize]{itemsep=-2pt,topsep=3pt}
+
+
+% 圖
+\usepackage{graphicx}
+%\renewcommand\thesubsection{\Alph{subsection}} 
+\renewcommand{\figurename}{圖}
+\renewcommand{\tablename}{表}
+\renewcommand\contentsname{目錄}
+\renewcommand{\bibname}{References}
+
+% path
+\newcommand{\codePath}{./SampleCode/src/}
+\newcommand{\codeURL}{https://github.com/nlhsueh/sqa/tree/master/src}
+
+% for source code
+\usepackage{listings}
+	\newfontfamily\listingsfont[Scale=.8]{Menlo}
+\lstset{breaklines=true,% 過長的程式行可斷行
+tabsize=4,
+extendedchars=false,% 中文處理不需要 extendedchars
+texcl=true,% 中文註解需要有 TeX 處理過的 comment line, 所以設成 true
+comment=[l]\%\%,% 以雙「百分號」做為程式中文註解的起頭標記，配合 MATLAB
+basicstyle=\small,
+%basicstyle=\listingsfont,
+commentstyle=\upshape,% 預設是斜體字，會影響註解裏的英文，改用正體
+%language=Octave % 會將一些 octave 指令以粗體顯示
+  language=JAVA, 
+  breaklines=true, 
+  numbers=none, 
+  numberstyle=\tiny,
+  captionpos=t,
+  stepnumber=1, 
+  numbersep=10pt,
+  commentstyle=\textit,
+  stringstyle=\ttfamily,
+  xleftmargin={2em},
+  xrightmargin={1em},
+  %lineskip=-1pt,
+}
+\renewcommand{\lstlistingname}{程式}
+               
+\renewenvironment{quote}
+               {\list{}{\rightmargin=0.3in\leftmargin=0.3in}%
+                \item \relax \Large  %\textquotedblleft  
+                \normalsize} %\ignorespaces
+               {\unskip\unskip  \endlist} %\textquotedblright
+               
+
+\declaretheorem[style=remark, name={}]{Example}               
+         
+
+%include PDF file
+\usepackage{pdfpages}
+\usepackage{float}      
+
+%headline
+%\newcommand{\headline}[1]{\noindent\textbf{#1}}
+
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={SQA},    % title
+    pdfauthor={薛念林},     % author
+    pdfsubject={Software Quality},   % subject of the document
+    pdfcreator={Creator},   % creator of the document
+    pdfproducer={薛念林}, % producer of the document
+    pdfkeywords={software, quality, testing}, % list of keywords
+    pdfnewwindow=true,      % links in new PDF window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=black, %purple,          % color of internal links (change box color with linkbordercolor)
+    citecolor=gray,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=blue           % color of external links
+}
+
+\usepackage{graphicx}
+\graphicspath{{./image/}}
+
+% change color of section title
+
+\usepackage{titlesec}
+%\newcommand{\sectionbreak}{\clearpage}
+%\newcommand{\subsectionbreak}{\clearpage}
+
+\usepackage{xcolor}
+\definecolor{MSBlue}{rgb}{.204,.353,.541}
+\definecolor{MSLightBlue}{rgb}{.31,.506,.741}
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\definecolor{antiquewhite}{rgb}{0.98, 0.92, 0.84}
+\definecolor{arsenic}{rgb}{0.23, 0.27, 0.29}
+\titleformat*{\section}{\Large\bfseries\sffamily\color{MSBlue}}
+\titleformat*{\subsection}{\large\bfseries\sffamily\color{MSLightBlue}}
+%\titleformat*{\subsubsection}{\itshape\subsubsectionfont}
+
+% ICON
+\newcommand{\questionIcon}{\includegraphics[scale=1]{./icon/question-speech-bubble.png} \enspace} 
+
+\newcommand{\BearIcon}{\enspace \includegraphics[scale=0.6]{./icon/bear.png} \enspace}
+%\newcommand{\QuoteIcon}{\includegraphics[scale=0.6]{./icon/left179.png} \enspace}
+\newcommand{\JokeIcon}{\includegraphics[scale=0.6]{./icon/mask17.png} \enspace}
+%\newcommand{\Icon}{\includegraphics[scale=0.6]{./icon/right198.png} \enspace}
+%\newcommand{\PrincipleIcon}{\includegraphics[scale=0.6]{./icon/fire.png} \enspace}
+\newcommand{\ExIcon}{\includegraphics[scale=0.6]{./icon/exercise3.png} \enspace}
+\newcommand{\SmallExIcon}{\includegraphics[scale=0.3]{./icon/exercise3.png} \enspace}
+\newcommand{\importantIcon}{\includegraphics[scale=1]{./icon/move-to-next.png} \enspace} 
+
+
+\newcommand{\ReportIcon}{\includegraphics[scale=0.5]{./icon/pen.png} \enspace}
+\newcommand{\CodingIcon}{\includegraphics[scale=0.5]{./icon/computer.png} \enspace}
+\newcommand{\ThinkIcon}{\includegraphics[scale=0.5]{./icon/think.png} \enspace}
+\newcommand{\PenIcon}{\includegraphics[scale=0.5]{./icon/pen.png} \enspace}
+\newcommand{\DiscussIcon}{\includegraphics[scale=0.5]{./icon/discuss.png} \enspace}
+\newcommand{\LabIcon}{\includegraphics[scale=0.5]{./icon/lab.png} \enspace}
+\newcommand{\FBIcon}{\includegraphics[scale=0.4]{./icon/facebook-logo.png} \enspace}
+\newcommand{\GoogleGroupIcon}{\includegraphics[scale=0.4]{./icon/discuss.png}\enspace}
+\newcommand{\ResearchIcon}{\includegraphics[scale=0.1]{./icon/lamp.png} \enspace}
+\newcommand{\HandPenIcon}{\includegraphics[scale=0.05]{./icon/hand_pen.png} \enspace}
+\newcommand{\VideoIcon}{\includegraphics[scale=0.08]{./icon/video.png} \enspace}
+
+% Quote and Def
+\newcommand{\storyend}{\rule{\linewidth}{0.5pt} }
+\newcommand{\myquote}[3]{\begin{quote}\textbf{#1} #2  \textit{#3}\end{quote}}
+\newcommand{\question}[1]{\begin{quote} \questionIcon {\WeiBei #1} \end{quote}}
+\newcommand{\mquote}[1]{\begin{quote} \QuoteIcon #1 \end{quote}}
+\newcommand{\myvideo}[2]{\begin{quote} \VideoIcon \href{#1}{#2} \end{quote}}
+
+\newenvironment{story}{\verse \rule{\linewidth}{0.5pt} \\ 
+\color{arsenic} }
+
+\newcommand{\mydef}[2]{
+\begin{center}\begin{tcolorbox}[title=\DefinitionIcon #1, width=0.85\columnwidth, title filled=false,colbacktitle=yellow, coltitle=black]
+#2
+\end{tcolorbox}\end{center}
+}
+
+% 練習題，參考本文
+\newcommand{\RefSec}[1]{
+%\footnotesize{(sec\ref{#1}/p\pageref{#1})}
+\footnotesize{\hyperref[#1]{(參考本文)}}
+}
+
+\newcommand{\BBFB}{\href{https://www.facebook.com/groups/1678843235698942/}{\FBIcon {\footnotesize 加入討論}}}
+
+\newcommand{\exerciseMargin}
+{\newgeometry{top=0.75in, bottom=6in, left=.5in, right=.5in}}
+
+\newcommand{\originalMargin}
+{\newgeometry{top=0.75in, bottom=.5in, left=.5in, right=.5in}}
+
+%\newcommand{\discuss}[1]{\href{https://groups.google.com/forum/#!forum/bigbear_nlhsueh}{\GoogleGroupIcon {\footnotesize 加入討論}}}
+
+
+% Def of some variable
+\newif\ifWide 					\Widefalse
+\newif\ifAllChapter			\AllChapterfalse
+\newif\ifAns 					\Ansfalse
+\newif\ifShowContent 	\ShowContenttrue % show the article, not only lab
+\newif\ifSlide					\Slidefalse
+\newif\ifBook					\Booktrue
+\newif\ifTBook				\TBookfalse % two column book
+\newif\ifEx						\Exfalse % Exercise book
+\newif \ifnotEx				\notExtrue
+
+
+
+
+
+% ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+% Old in SQA.tex
+%\usepackage{amsthm}
+%\usepackage{thmtools}
+%\newtheorem{defi}{Definition}
+%
+%\usepackage{ragged2e}
+%\usepackage{wrapfig,lipsum,booktabs}
+%\usepackage{subcaption}
+%\usepackage{wraptable}
+% ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+

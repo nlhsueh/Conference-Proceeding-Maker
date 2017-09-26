@@ -1,0 +1,35 @@
+\contentsline {chapter}{\numberline {} 大會資訊}{5}{chapter*.3}
+\contentsline {chapter}{\numberline {} 大會組織}{6}{chapter*.5}
+\contentsline {chapter}{\numberline {} 大會議程}{7}{chapter*.6}
+\contentsline {chapter}{\numberline {} 分場詳細議程}{8}{chapter*.8}
+\contentsline {chapter}{\numberline {}大會演講 I}{13}{chapter*.9}
+\contentsline {paragraph}{Lawrence Chung}{13}{figure.caption.10}
+\contentsline {chapter}{\numberline {}大會演講 II}{14}{chapter*.11}
+\contentsline {paragraph}{陳昇瑋博士}{14}{figure.caption.12}
+\contentsline {chapter}{\numberline {}專題論壇}{15}{chapter*.13}
+\contentsline {subsubsection}{與談人：Prof. Lawrence Chung / Department of Computer Science, University of Texas at Dallas}{16}{figure.caption.14}
+\contentsline {chapter}{\numberline {}企業演講}{17}{chapter*.15}
+\contentsline {chapter}{\numberline {}JISE Special Issue}{19}{chapter*.16}
+\contentsline {paragraph}{Scopes}{19}{chapter*.16}
+\contentsline {paragraph}{Author’s Guidelines}{20}{chapter*.16}
+\contentsline {paragraph}{Publication Schedule}{20}{chapter*.16}
+\contentsline {chapter}{\numberline {}TCSE Hacks 黑客松}{21}{chapter*.17}
+\contentsline {chapter}{\numberline {1}Software Engineering, Software Testing, Web Engineering and AI}{22}{chapter.1}
+\contentsline {section}{\numberline {1A}Software Engineering I}{22}{section.1.1}
+\contentsline {section}{\numberline {1B}Software Testing I}{26}{section.1.2}
+\contentsline {section}{\numberline {1C}Web Engineering}{30}{section.1.3}
+\contentsline {section}{\numberline {1D}Artificial Intelligence}{34}{section.1.4}
+\contentsline {chapter}{\numberline {2}English paper, IoT and Industry Talk I}{38}{chapter.2}
+\contentsline {section}{\numberline {2A}Best English paper}{38}{section.2.1}
+\contentsline {section}{\numberline {2B}English paper}{42}{section.2.2}
+\contentsline {section}{\numberline {2C}IoT}{46}{section.2.3}
+\contentsline {section}{\numberline {2D}Industry Talk I}{50}{section.2.4}
+\contentsline {chapter}{\numberline {3}Best regular paper, Software testing II, and Demo paper}{51}{chapter.3}
+\contentsline {section}{\numberline {3A}Best regular paper}{51}{section.3.1}
+\contentsline {section}{\numberline {3B}Software Testing II}{55}{section.3.2}
+\contentsline {section}{\numberline {3C}Demo paper}{59}{section.3.3}
+\contentsline {chapter}{\numberline {4}Software Engineering II, Software Application, and Industry Talk II}{63}{chapter.4}
+\contentsline {section}{\numberline {4A}Data Engineering}{63}{section.4.1}
+\contentsline {section}{\numberline {4B}Software Engineering II}{67}{section.4.2}
+\contentsline {section}{\numberline {4C}Application}{71}{section.4.3}
+\contentsline {section}{\numberline {4D}Industry talk II}{75}{section.4.4}
