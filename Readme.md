@@ -1,18 +1,19 @@
 
-When you use EashChair to manage your paper submission and review, this ProceedingMaker is good to work with.
+# ProceedingMaker Project
 
-# How to Use This Maker 
-1. You download all final version PDF files from EasyChair, put to ./paper directory
-2. You can modify the TCSE.tex to build the proceeding. If you have used latex to write paper, I believe that is easy to you.
+When you use **EashChair** to manage your paper submission and review, this ProceedingMaker is especially good to work with.
+
+## How to Use This Maker 
+1. Download all final version PDF files from EasyChair, put to ./paper directory. Note that in this demo project, I just put a little fake papers.
+2. Modify the TCSE.tex (of course you can rename to your conference name) to make the proceeding. If you have experience of latex, I believe that is easy to you.
 3. ./paperList.tex is the file to organize your sessions. I recommend you 
-    1. copy paper information to the a excel file, such as agenda.xlsx 
+    1. copy paper information from EasyChair to the a excel file, such as agenda.xlsx 
     2. arrange the sessions in the agenda.xlsx
-    3. add some texts for formating latex file in the next step
+    3. (optional) add some texts for formating latex file in the next step
     4. copy the text from .xlsx to the paperList.tex 
-4. In this demo code, I just put part of papers, and they are all fake paper, for just demo.
 
-# Configuration
+## Configuration
 
+You may want to make a Conference Manual (大會手冊) or 論文集 (proceeding), Then you can choose to print one-page or all-pages.
 1. \ShowPapertrue: show papers or not
 2. \AllPagetrue: show all pages or not. When this is true, you should set \OnePagefalse
-
